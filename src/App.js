@@ -1,30 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+import Card from './Card'
 
 function App() {
 
-  const name = 'Kristina';
-  const element1 = <h1>Hello, {name}</h1>;
-
-  function formatName(user) {
-    return user.firstName + ' ' + user.lastName;
-  }
-  
-  const user = {
-    firstName: 'Kristina',
-    lastName: 'Delia'
-  };
-  
-  const element2 = (
-    <h1>
-      Hello, {formatName(user)}!
-    </h1>
-  );
+  const cardValues = ["Card1", "Card2", "Card3", "Card4"];
   return (
-    <div className="Clock">
-     {element2}
+    <div className="App">
+    {cardValues.map((item,idx)=>(<Card key = {idx} cardID={item}/>))}
     </div>
   );
-}
+  }
+  
 
 export default App;
